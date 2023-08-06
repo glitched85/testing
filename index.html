@@ -1,28 +1,157 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Website</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
+  <title>Sticky Bottom Navigation and Scrolling Image</title>
+  <style>
+    /* Reset default styles */
+    body, h1, h2, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Sticky Navigation styles */
+    .sticky-nav {
+      position: sticky;
+      bottom: 0;
+      background-color: #333;
+      z-index: 1000;
+    }
+
+    .top-layer {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1001;
+    }
+
+    .top-layer a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    .bottom-layer {
+      display: flex;
+      justify-content: center;
+      background-color: #222;
+		 position: sticky;
+		z-index: 1000;
+    }
+
+    .bottom-layer a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    /* Scrolling Image styles */
+    .scrolling-image {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .scrolling-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../Documents/website design/flower.jpg"); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2; /* Adjust the opacity value (0.0 to 1.0) */
+      z-index: -1;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+	  
+	  /* Hero Banner styles */
+    .hero-banner {
+    background-image: url("../Documents/website design/flower.jpg"); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+		padding-left: 100px;
+	opacity: 0.9;
+    color: #fff;
+    text-align: left;
+    }
+
+    .hero-title {
+    font-size: 100px;
+    margin-bottom: 20px;
+    text-shadow: 5px 7px #000000;
+    }
+
+    .action-button {
+      padding: 10px 20px;
+      background-color: #FFA500;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+	  
+  
+@media screen{
+.hero-descrip {
+    color: #F7F896;
+    font-size: x-large;
+    text-shadow: 2px 0px #000000;
+}
+}
+  </style>
 </head>
 <body>
-	<header>
-		<h1>My Website</h1>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<h2>Welcome to my website</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id pretium nisi. Aliquam luctus eros in ligula hendrerit, et dictum tellus finibus. Vivamus at orci ut dolor ultricies interdum sit amet eu lorem. Sed in lacus ac arcu rhoncus euismod. Quisque ut sapien vel felis blandit sagittis. Donec tristique, arcu eget lacinia faucibus, lectus turpis vehicula leo, at consequat elit elit et mi.</p>
-	</main>
-	<footer>
-		<p>Copyright © 2023 My Website. All rights reserved.</p>
-	</footer>
+  <div class="scrolling-image">
+    <!-- Content goes here -->
+	  
+    <div class="hero-banner">
+    <h1 class="hero-title">Alvin's Portfolio</h1>
+    <p class="hero-descrip">Showcases my professional journey, expertise, and accomplishments</p>
+    <!--<a href="#" class="action-button">Action Link</a> -->
+  </div>
+	  
+	  
+  </div>
+
+  <div class="sticky-nav top-layer">
+    <a href="#">Home</a>
+    <a href="#">About Me</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="sticky-nav bottom-layer">
+    <a href="#">Portfolio</a>
+    <a href="#">Skills</a>
+    <a href="#">Experience</a>
+    <a href="#">Blog</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Alvin's Website. All rights reserved.</p>
+  </footer>
 </body>
 </html>
